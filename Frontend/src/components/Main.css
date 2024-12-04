@@ -9,12 +9,6 @@ body, html {
 
 }
 
-.Main {
-  height: 100vh;
-  overflow-y: auto; /* This will add the scrollbar to the main container */
-  padding-bottom: 15vh;
-}
-
 .Main .nav {
   position: sticky;
   top: 0;
@@ -146,6 +140,192 @@ body, html {
   font-size: 13px;
 }
 
+
+
+.ai-response-display {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.ai-response-display h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Space between messages */
+  padding: 8px 12px; /* Reduce horizontal padding */
+  border-radius: 5px;
+  max-width: 70%; /* Keeps the message within a reasonable width */
+  background-color: transparent; /* Adjust as needed */
+  word-wrap: break-word; /* Allows long words to wrap */
+  overflow-wrap: break-word; /* Break long words that can't fit */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for visibility */
+}
+
+.message.ai {
+  justify-content: flex-start;
+  background-color: #f0f4f9; /* Subtle background for AI messages */
+  align-self: flex-start; /* Align AI messages to start */
+}
+
+.message.user {
+  justify-content: flex-end;
+  margin-left: auto; /* Align user messages to the end */
+  background-color: #e3f2fd; /* Background for user messages */
+  align-self: flex-end; /* Align user messages to end */
+}
+
+
+
+.message p {
+  margin: 0; /* Remove default margin for paragraphs */
+  max-width: 100%; /* Ensure paragraph can use full width */
+  word-wrap: break-word; /* Allow text to wrap */
+}
+:root {
+  /* Color Palette */
+  --primary-color: #4FB783;
+  --secondary-color: #FEEB97;
+  --background-light: #F9FAF4;
+  --background-mid: #F0F4F9;
+  --text-primary: #333;
+  --text-secondary: #585858;
+  --border-radius: 12px;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--background-light);
+}
+
+
+/* Navigation */
+.Main .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--background-light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.Main .nav img {
+  width: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.Main .nav img:hover {
+  transform: scale(1.1);
+}
+
+/* Cards Grid */
+.Main .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.Main .card {
+  background-color: var(--background-mid);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Main .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+/* Chat History Styling */
+.chat-history {
+  flex-grow: 20;
+  overflow-y: scroll; /* Ensures scrolling is enabled */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  scrollbar-color: var(--primary-color) transparent; /* For Firefox */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+.chat-history::-webkit-scrollbar {
+  display: none;
+}
+
+
+.message {
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message.ai {
+  align-self: flex-start;
+  background-color: var(--background-mid);
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+  .Main .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .Main .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+.follow-up {
+  color: #888;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.loading-indicator {
+  text-align: center;
+  color: #666;
+  padding: 10px;
+}
+
 .slider-wrapper {
   padding: 20px;
   width: 100%;
@@ -208,9 +388,8 @@ body, html {
 
 .value-display {
   position: absolute;
-  top: 50;
-  left: 50%;
-  transform: translate(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #c4c7c5;
   width: 40px;
   height: 40px;
@@ -219,12 +398,9 @@ body, html {
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   color: #34495e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .slider-wrapper p {
   font-size: 17px;
   color: cadetblue;
@@ -232,58 +408,4 @@ body, html {
 
 .slider-wrapper p strong {
   color: #a04f5f;
-}
-
-.ai-response-display {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-}
-
-.ai-response-display h3 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.chat-history {
-  overflow-y: auto; /* Allow scrolling if necessary */
-  margin-bottom: 20px; /* This could be reduced if not needed */
-  padding: 10px; /* Ensure padding is not too much */
-  background-color: transparent;
-  max-height: 300px; /* Set a max-height to avoid excessive growth */
-}
-
-.message {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px; /* Space between messages */
-  padding: 8px 12px; /* Reduce horizontal padding */
-  border-radius: 5px;
-  max-width: 70%; /* Keeps the message within a reasonable width */
-  background-color: transparent; /* Adjust as needed */
-  word-wrap: break-word; /* Allows long words to wrap */
-  overflow-wrap: break-word; /* Break long words that can't fit */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for visibility */
-}
-
-.message.ai {
-  justify-content: flex-start;
-  background-color: #f0f4f9; /* Subtle background for AI messages */
-  align-self: flex-start; /* Align AI messages to start */
-}
-
-.message.user {
-  justify-content: flex-end;
-  margin-left: auto; /* Align user messages to the end */
-  background-color: #e3f2fd; /* Background for user messages */
-  align-self: flex-end; /* Align user messages to end */
-}
-
-
-
-.message p {
-  margin: 0; /* Remove default margin for paragraphs */
-  max-width: 100%; /* Ensure paragraph can use full width */
-  word-wrap: break-word; /* Allow text to wrap */
 }
