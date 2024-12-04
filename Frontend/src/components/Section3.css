@@ -1,0 +1,25 @@
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9faf4;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust max-width of the container */
+  }
+  
+  .features-image{
+    width: 100%;
+    max-width: 1000px; /* Optional, adjust to a max limit */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Hover effect for the image */
+  .features-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  

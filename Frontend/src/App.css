@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Good+Feeling+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9faf4;
+}
+
+.App {
+  text-align: center;
+  max-width: 1600px; /* Keep the max-width */
+  margin: 0 auto; /* Center the section */
+}
+
+.App-header {
+  background-color: #ffffff; 
+  padding-left: 180px; 
+  padding-right: 200px; 
+  display: flex;
+  margin-top: 33px;
+  justify-content: space-between; 
+  align-items: center; 
+  font-size: 15px;
+}
+
+.App-header .logo {
+  display: flex;
+  align-items: center; 
+}
+
+.App-header .logo-icon {
+  font-size: 24px; 
+  margin-right: 10px; 
+}
+
+.App-header .logo-text {
+  font-size: 24px; 
+  font-weight: bold; 
+}
+
+.App-header ul {
+  list-style: none; 
+  display: flex; 
+  padding: 0; 
+  margin: 0; 
+  gap: 30px; 
+}
+
+.App-header ul li {
+  display: inline; 
+}
+
+.App-header ul li a {
+  text-decoration: none; 
+  color: #555; 
+  font-size: 18px; 
+  transition: color 0.3s; 
+}
+
+.App-header ul li a:hover {
+  color: #007bff; 
+}
+
+
+.features-section1 {
+  display: flex;
+  background-color: #f5f7f0;
+}
+
+.title {
+  text-align: left;
+  font-size: 3rem;
+  padding-left: 200px;  
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.description {
+  text-align: right;
+  font-size: 1.5rem;
+  padding-right: 220px; 
+  padding-left: 300px;
+  font-family: 'Lora', serif; 
+  font-weight: 500;
+  margin-top: 60px; 
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature h4 {
+  font-size: 1.5rem;
+}
+
+.features{
+  background-color: #f9faf4;
+}
+
+.features-image {  
+  width: 100%; /* Ensures the image scales with the container width */
+  max-width: 1000px; /* Optional: Maximum width if you want to constrain it */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; 
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column; /* Stack header items on smaller screens */
+    align-items: center; /* Center-align items */
+    padding: 10px 20px; /* Reduce padding for mobile */
+  }
+
+  .title {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+
+  .description {
+    font-size: 1.2rem; /* Smaller description on mobile */
+  }
+
+  .features {
+    flex-direction: column; /* Stack features vertically on mobile */
+    align-items: center;
+  }
+
+  .feature {
+    margin: 10px 0; /* Space between feature items */
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.logo-container img {
+  width: 40px; /* Adjust size as needed */
+  margin-right: 8px; /* Space between logo and text */
+}
