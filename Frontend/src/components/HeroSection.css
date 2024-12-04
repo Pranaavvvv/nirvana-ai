@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     padding: 80px 60px;
-    background-color: #fff;
+    background-color: #f9faf4;
     align-items: center;
     
   }
@@ -33,7 +33,7 @@
   
   button {
     background-color: #3d8361; 
-    color: white; 
+    color: #f9faf4; 
     border: none; 
     padding: 15px 30px; 
     font-size: 1rem;
